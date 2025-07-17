@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88cfcdaced19e94a9d65ca3ad007679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  _rotationSpeed: {x: 10, y: 0, z: 0}
 --- !u!114 &672688479114106014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   _appearAnimationName: CoinAppear
   _disappearAnimationName: CoinDisappear
   _animator: {fileID: 3158551701954993570}
-  _timeToDisappear: 10
+  _timeToDisappear: 30
   _onCoinCollected:
     m_PersistentCalls:
       m_Calls: []
