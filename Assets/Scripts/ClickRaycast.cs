@@ -8,8 +8,10 @@ public class ClickRaycast : MonoBehaviour
 
     [SerializeField]
     private LayerMask _raycastLayerMask;
+
     [SerializeField]
     private string _coinTag = "Coin";
+
     [SerializeField]
     private UnityEvent<Transform> _onCoinPressed;
 
@@ -27,6 +29,7 @@ public class ClickRaycast : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit, _raycastDistance, _raycastLayerMask))
             {
                 if (hit.collider.CompareTag(_coinTag))
@@ -43,5 +46,3 @@ public class ClickRaycast : MonoBehaviour
         _onCoinPressed?.Invoke(coin.transform);
     }
 }
-
-

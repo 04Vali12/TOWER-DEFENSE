@@ -13,6 +13,7 @@ public class EnemyData : ScriptableObject
     public string runAnimationName = "zombieRun";
     public string attackAnimationName = "ZombieAttack";
     public string dieAnimationName = "ZombieDie";
-
     public string winAnimationName = "ZombieWin";
+
+    public string dieSoundName = "EnemyDie";
 }

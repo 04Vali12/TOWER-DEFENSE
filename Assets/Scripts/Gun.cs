@@ -6,16 +6,18 @@ public class Gun : MonoBehaviour
 {
     [SerializeField]
     private Transform _turret;
+
     [SerializeField]
     private UnityEvent<Transform> _onFire;
+
     [SerializeField]
     private GunData _gunData;
+
     [SerializeField]
     private string _targetTag = "Zombie";
 
     private EnemyTarget _target;
-
-    private void OTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (_target == null && other.CompareTag(_targetTag))
         {
@@ -23,7 +25,6 @@ public class Gun : MonoBehaviour
             StartCoroutine(FireAtTarget());
         }
     }
-
     private IEnumerator FireAtTarget()
     {
         while (_target != null && _target.Health.CurrentHealth > 0)
@@ -32,18 +33,21 @@ public class Gun : MonoBehaviour
             _onFire?.Invoke(_target.transform);
             SoundManager.instance.Play(_gunData.fireSoundName);
             _target.Health.TakeDamage(_gunData.damage);
-            yield return new WaitForSeconds(_gunData.damage);
+            yield return new WaitForSeconds(_gunData.fireRate);
         }
         _target = null;
     }
-
+    private void OnDisable()
+    {
+        _target = null;
+    }
 }
+
 [System.Serializable]
 
 public class EnemyTarget
 {
     public Transform transform;
-
     public Health Health;
 
     public EnemyTarget(Transform targetTransform, Health targetHealth)

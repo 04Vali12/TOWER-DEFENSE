@@ -1,17 +1,17 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InstantiatePoolObject : MonoBehaviour
 {
     [SerializeField]
-
-    private GameObject _prefab;
+    public GameObject _prefab;
 
     [SerializeField]
-
-    private Transform _parent;
-
+    public Transform _parent;
     private List<GameObject> _pool = new List<GameObject>();
+
+    private GameObject _currentObject;
 
     private GameObject GetObject()
     {
@@ -26,16 +26,21 @@ public class InstantiatePoolObject : MonoBehaviour
         _pool.Add(newObj);
         return newObj;
     }
+    public GameObject GetCurrentObject()
+    {
+        return _currentObject;
+    }
+
     public void InstantiateObject(Transform target)
     {
-        var obj = GetObject();
-        obj.transform.SetPositionAndRotation(target.position, target.rotation);
-        obj.SetActive(true);
+        _currentObject = GetObject();
+        SetObjectPosition(_currentObject, target.position, target.rotation);
     }
-    public void InstantiateObject(Vector3 position)
+
+    public void InstatiateObject(Vector3 position)
     {
-        var obj = GetObject();
-        SetObjectPosition(obj, position, Quaternion.identity);
+        _currentObject = GetObject();
+        SetObjectPosition(_currentObject, position, Quaternion.identity);
     }
 
     public void SetObjectPosition(GameObject obj, Vector3 position, Quaternion rotation)
@@ -51,9 +56,10 @@ public class InstantiatePoolObject : MonoBehaviour
         }
         obj.SetActive(true);
     }
-    public void DeactivateAllObjects()
+
+    public void DesactivateAllObjects()
     {
-        foreach(var obj in _pool)
+        foreach (var obj in _pool)
         {
             obj.SetActive(false);
         }

@@ -1,7 +1,8 @@
+using UnityEngine;
 using System;
 using System.Collections;
-using UnityEngine;
 using UnityEngine.Events;
+
 
 public class Coin : MonoBehaviour
 {
@@ -9,14 +10,18 @@ public class Coin : MonoBehaviour
     private string _appearAnimationName = "CoinAppear";
     [SerializeField]
     private string _disappearAnimationName = "CoinDisappear";
+
     [SerializeField]
     private Animator _animator;
     [SerializeField]
+
     private float _timeToDisappear = 3f;
 
     [SerializeField]
     private UnityEvent _onCoinCollected;
+
     private Collider _collider;
+
     private void Awake()
     {
         _collider = GetComponent<Collider>();

@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Tower
   - Zombie
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - HitRayObject
   - Water
   - UI
-  - 
+  - HitRayObject 2
   - 
   - 
   - 
