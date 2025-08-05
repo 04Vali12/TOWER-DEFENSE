@@ -547,7 +547,7 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1682161073}
         m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Initialize
         m_Mode: 1
@@ -622,7 +622,7 @@ MonoBehaviour:
   OnTargetLost:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1682161073}
         m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -1047,6 +1047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587808975}
+  - component: {fileID: 587808976}
   m_Layer: 5
   m_Name: Loose Screen
   m_TagString: Untagged
@@ -1064,7 +1065,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1629008529}
   m_Father: {fileID: 2134011270}
@@ -1074,6 +1075,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &587808976
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587808974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2dfb5502ae28a24a9b5903ba53029e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &771680133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,6 +1474,52 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &846339701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846339703}
+  - component: {fileID: 846339702}
+  m_Layer: 0
+  m_Name: TowerDestroy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &846339702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846339701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be6420f522eb4f4a919b05b16e3df74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 1944206404642467004, guid: f9d2e43a1307c8c4d8ae6dcf6feb64b6, type: 3}
+  _parent: {fileID: 339262711}
+--- !u!4 &846339703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846339701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0314554, y: 0.13142486, z: 0.030678526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2179,8 +2248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db65dc3679744249a9b16a6463201f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnInterval: 15
-  _spawnRadius: 1
+  _spawnInterval: 10
+  _spawnRadius: 0.8
   _positionY: 0
   _InstantiateZombie:
     m_PersistentCalls:
@@ -2687,7 +2756,7 @@ GameObject:
   - component: {fileID: 1629008531}
   - component: {fileID: 1629008530}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: LooseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2764,15 +2833,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b549b41faf9d4eb49ac8279b14d6ff33, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.04
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b549b41faf9d4eb49ac8279b14d6ff33, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.04
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b549b41faf9d4eb49ac8279b14d6ff33, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.04
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b549b41faf9d4eb49ac8279b14d6ff33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2919,16 +2988,64 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 587808976}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UIScreenLooseAppear
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1682161071}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TowerHiden
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 846339702}
+        m_TargetAssemblyTypeName: InstantiatePoolObject, Assembly-CSharp
+        m_MethodName: InstantiateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 846339703}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TowerHiden
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 923374540}
+        m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TowerHiden
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1308792683}
+        m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TowerHiden
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1682161073
@@ -4111,3 +4228,4 @@ SceneRoots:
   - {fileID: 1821787838}
   - {fileID: 538425542}
   - {fileID: 1091651698}
+  - {fileID: 846339703}

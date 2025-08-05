@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0cc8e6e95d27d144a3cb258e9619945, type: 3}
   m_Name: MonsterData
   m_EditorClassIdentifier: 
-  attackRange: 1
-  AttackDamage: 10
+  attackRange: 0.1
+  AttackDamage: 4
   runSpeed: 0.05
   attackDuration: 1
   attackCooldown: 1
